@@ -3,7 +3,7 @@
 DIR=${PWD}
 
 mkdir $HOME/.vim
-ln -is $DIR/vim/.vimrc $HOME/.vim/.vimrc
+ln -is $DIR/vim/vimrc $HOME/.vim/vimrc
 
 ln -is $DIR/zsh/.zshrc $HOME/.zshrc
 mkdir $HOME/.oh-my-zsh/custom
