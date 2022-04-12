@@ -43,3 +43,9 @@ let g:ycm_auto_hover = ''
 nmap <leader>D <plug>(YCMHover)
 
 filetype plugin indent on
+
+"detect Bogiefile and Gearsfile as yaml
+augroup Bogie
+  au!
+  autocmd BufNewFile,BufRead Bogiefile,Gearsfile set filetype=yaml
+augroup END
