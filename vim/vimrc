@@ -45,6 +45,14 @@ nmap <leader>D <plug>(YCMHover)
 
 filetype plugin indent on
 
+
+"detect Bogiefile and Gearsfile as yaml
+augroup Bogie
+  au!
+  autocmd BufNewFile,BufRead Bogiefile,Gearsfile set filetype=yaml
+augroup END
+
+
 """ COC
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
