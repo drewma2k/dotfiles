@@ -34,7 +34,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'jungunn/fzf.vim'
 Plugin 'jungunn/fzf'
-"Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot'
 "Plugin 'ycm-core/YouCompleteMe'
 "Plugin 'dense-analysis/ale'
 Plugin 'neoclide/coc.nvim'
