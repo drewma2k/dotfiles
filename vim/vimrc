@@ -1,4 +1,4 @@
-source $VIMRUNTIME/defaults.vim
+" source $VIMRUNTIME/defaults.vim
 syntax on
 set number
 set nocompatible
