@@ -1,17 +1,19 @@
-source $VIMRUNTIME/defaults.vim
+" source $VIMRUNTIME/defaults.vim
 syntax on
 set number
 set nocompatible
 set nowrap
 filetype indent on
 set expandtab
+set ignorecase
 set smartcase
 set showcmd
 set wildmenu
 set laststatus=2
 set tags=./tags;/,.tags;/
 set mouse=
-" set autochdir
+set autochdir
+set hlsearch
 highlight Pmenu ctermbg=darkgrey ctermfg=white cterm=none
 highlight PmenuSel ctermbg=white ctermfg=DarkGrey
 
@@ -40,6 +42,8 @@ Plugin 'neoclide/coc.nvim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdcommenter'
 " Plugin 'preservim/nerdtree'
+" Plugin 'neovim/nvim-lspconfig'
+Plugin 'preservim/nerdtree'
 call vundle#end()
 
 let g:ycm_auto_hover = ''
@@ -224,3 +228,9 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>

@@ -10,3 +10,7 @@ alias vimrc='vim ~/.vim/vimrc'
 
 # formatted date that will sort properly
 alias datef='date +%Y-%m-%d'
+
+# exa
+alias e='exa -la'
+alias ee='exa -l'

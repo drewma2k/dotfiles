@@ -19,3 +19,6 @@ mkdir $HOME/bin
 ln -is $DIR/scripts/ide.sh $HOME/bin/ide
 chmod +x $HOME/bin/ide
 
+# nvim
+ln -is $DIR/nvim/init.vim $HOME/.config/nvim/init.vim
+
