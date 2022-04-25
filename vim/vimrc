@@ -11,14 +11,15 @@ set wildmenu
 set laststatus=2
 set tags=./tags;/,.tags;/
 set mouse=
+" set autochdir
 highlight Pmenu ctermbg=darkgrey ctermfg=white cterm=none
 highlight PmenuSel ctermbg=white ctermfg=DarkGrey
 
 " Netrw
 let g:netrw_banner = 0
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 0
 let g:netrw_winsize = 15
-let g:netrw_liststyle = 3
+let g:netrw_liststyle = 1
 let g:netrw_altv = 1
 let g:netrw_usetab = 1
 let g:netrw_wiw = 0
@@ -32,12 +33,13 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'jungunn/fzf.vim'
-Plugin 'jungunn/fzf'
+"Plugin 'jungunn/fzf.vim'
+"Plugin 'jungunn/fzf'
 Plugin 'sheerun/vim-polyglot'
-"Plugin 'ycm-core/YouCompleteMe'
-"Plugin 'dense-analysis/ale'
 Plugin 'neoclide/coc.nvim'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'preservim/nerdcommenter'
+" Plugin 'preservim/nerdtree'
 call vundle#end()
 
 let g:ycm_auto_hover = ''
