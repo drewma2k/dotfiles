@@ -46,8 +46,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdcommenter'
 " Plugin 'neovim/nvim-lspconfig'
 Plugin 'preservim/nerdtree'
-" Plugin 'neovim/nvim-lspconfig'
-Plugin 'preservim/nerdtree'
 Plugin 'junegunn/goyo.vim'
 call vundle#end()
 
