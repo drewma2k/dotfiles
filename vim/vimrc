@@ -9,11 +9,14 @@ set ignorecase
 set smartcase
 set showcmd
 set wildmenu
+set wildmode=longest,full
 set laststatus=2
 set tags=./tags;/,.tags;/
 set mouse=
 set autochdir
-set hlsearch
+set ruler
+set incsearch
+
 highlight Pmenu ctermbg=darkgrey ctermfg=white cterm=none
 highlight PmenuSel ctermbg=white ctermfg=DarkGrey
 
@@ -41,9 +44,11 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'neoclide/coc.nvim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdcommenter'
-" Plugin 'preservim/nerdtree'
 " Plugin 'neovim/nvim-lspconfig'
 Plugin 'preservim/nerdtree'
+" Plugin 'neovim/nvim-lspconfig'
+Plugin 'preservim/nerdtree'
+Plugin 'junegunn/goyo.vim'
 call vundle#end()
 
 let g:ycm_auto_hover = ''
@@ -234,3 +239,38 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" Tabline
+if (exists("g:loaded_tabline_vim") && g:loaded_tabline_vim) || &cp
+  finish
+endif
+let g:loaded_tabline_vim = 1
+
+function! Tabline()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    let tab = i + 1
+    let winnr = tabpagewinnr(tab)
+    let buflist = tabpagebuflist(tab)
+    let bufnr = buflist[winnr - 1]
+    let bufname = bufname(bufnr)
+    let bufmodified = getbufvar(bufnr, "&mod")
+
+    let s .= '%' . tab . 'T'
+    let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let s .= ' ' . tab .':'
+    let s .= (bufname != '' ? '['. fnamemodify(bufname, ':t') . '] ' : '[No Name] ')
+
+    if bufmodified
+      let s .= '[+] '
+    endif
+  endfor
+
+  let s .= '%#TabLineFill#'
+  if (exists("g:tablineclosebutton"))
+    let s .= '%=%999XX'
+  endif
+  return s
+endfunction
+set tabline=%!Tabline()
+
