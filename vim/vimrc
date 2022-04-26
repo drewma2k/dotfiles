@@ -47,6 +47,7 @@ Plugin 'preservim/nerdcommenter'
 " Plugin 'neovim/nvim-lspconfig'
 Plugin 'preservim/nerdtree'
 Plugin 'junegunn/goyo.vim'
+ Plugin 'mhinz/vim-startify'
 call vundle#end()
 
 let g:ycm_auto_hover = ''
@@ -263,4 +264,36 @@ function! Tabline()
   return s
 endfunction
 set tabline=%!Tabline()
+
+" Startify
+let g:startify_bookmarks = [
+        \ { 'c': '~/.vim/vimrc' },
+        \ '~/golfing',
+        \ ]
+
+let g:startify_custom_header = startify#pad([
+\ '            $$\    $$\ $$$$$$\ $$\      $$\ π',
+\ '            $$ |   $$ |\_$$  _|$$$\    $$$ | ',
+\ '            $$ |   $$ |  $$ |  $$$$\  $$$$ | ',
+\ '            \$$\  $$  |  $$ |  $$\$$\$$ $$ | ',
+\ '             \$$\$$  /   $$ |  $$ \$$$  $$ | ',
+\ '              \$$$  /    $$ |  $$ |\$  /$$ | ',
+\ '               \$  /   $$$$$$\ $$ | \_/ $$ | ',
+\ '                \_/    \______|\__|     \__| ',
+\ '                                             ',
+\] +
+\ startify#fortune#cowsay('', '═','║','╔','╗','╝','╚')
+\)
+let g:startify_custom_footer =
+       \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
+
+hi StartifyBracket ctermfg=240
+hi StartifyFile    ctermfg=147
+hi StartifyFooter  ctermfg=240
+hi StartifyHeader  ctermfg=114
+hi StartifyNumber  ctermfg=215
+hi StartifyPath    ctermfg=245
+hi StartifySlash   ctermfg=240
+hi StartifySpecial ctermfg=240
+
 
