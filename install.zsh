@@ -4,7 +4,7 @@ DIR=${PWD}
 
 # vim
 if read -qs "?Install .vim/vimrc? (y/n)"$'\n'; then
-  if [ ! -f $HOME/.vim/vimrc ]; then
+  if [ -f $HOME/.vim/vimrc ]; then
     mv $HOME/.vim/vimrc $HOME/.vim/vimrc.old
   fi
 
@@ -17,7 +17,7 @@ echo $'\n'
 
 # zsh
 if read -qs "?Install zsh configs? (y/n)"$'\n'; then
-  if [ ! -f $HOME/.zshrc ]; then
+  if [ -f $HOME/.zshrc ]; then
     mv $HOME/.zshrc $HOME/.zshrc.old
   fi
 
@@ -31,7 +31,9 @@ echo $'\n'
 
 # tmux
 if read -qs "?Install .tmux.conf? (y/n)"$'\n'; then
-  ln -is $DIR/tmux.conf $HOME/.tmux.conf
+  if [ -f $HOME/.tmux.conf ]; then
+    ln -is $DIR/tmux.conf $HOME/.tmux.conf
+  fi
 fi
 
 echo $'\n'
@@ -47,5 +49,7 @@ echo $'\n'
 
 # nvim
 if read -qs "?Install .config/nvim/init.vim? (y/n)"$'\n'; then
-  ln -is $DIR/nvim/init.vim $HOME/.config/nvim/init.vim
+  if [ -f $HOME/nvim/init.vim ]; then
+    ln -is $DIR/nvim/init.vim $HOME/.config/nvim/init.vim
+  fi
 fi
