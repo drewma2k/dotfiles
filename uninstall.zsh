@@ -4,8 +4,7 @@ if [ -f $HOME/.vim/vimrc.old ]; then
   mv $HOME/.vim/vimrc.old $HOME/.vim/vimrc
 fi
 
-
-if [ -f $HOME/.zshrc ]; then
+if [ -f $HOME/.zshrc.old ]; then
   rm $HOME/.zshrc
   mv $HOME/.zshrc.old $HOME/.zshrc
 fi
@@ -14,7 +13,7 @@ if [ -f $HOME/.oh-my-zsh/custom.aliases.zsh ]; then
   rm $HOME/.oh-my-zsh/custom/.aliases.zsh
 fi
 
-if [ -f $HOME/.tmux.conf ]; then
+if [ -f $HOME/.tmux.conf.old ]; then
   rm $HOME/.tmux.conf
   mv $HOME/.tmux.conf.old $HOME/.tmux.conf
 fi
@@ -23,7 +22,7 @@ if [ -f $HOME/bin/ide ]; then
   rm $HOME/bin/ide
 fi
 
-if [ -f $HOME/.config/nvim/init.vim ]; then
+if [ -f $HOME/.config/nvim/init.vim.old ]; then
   rm $HOME/.config/nvim/init.vim
   mv $HOME/.config/nvim/init.vim.old $HOME/.config/nvim/init.vim
 fi
