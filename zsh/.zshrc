@@ -103,3 +103,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+export PATH="/opt/homebrew/opt/sphinx-doc/bin:$PATH"
