@@ -73,6 +73,8 @@ ZSH_THEME="gallois"
 plugins=(
          git
          vi-mode
+         colored-man-pages
+         zsh-autosuggestions
         )
 
 source $ZSH/oh-my-zsh.sh
@@ -104,3 +106,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 export PATH="/opt/homebrew/opt/sphinx-doc/bin:$PATH"
+source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

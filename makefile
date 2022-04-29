@@ -1,2 +1,2 @@
 install:
-	sh ./install.sh
+	zsh ./install.zsh

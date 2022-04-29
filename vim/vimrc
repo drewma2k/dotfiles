@@ -266,6 +266,14 @@ endfunction
 set tabline=%!Tabline()
 
 " Startify
+
+function! s:projects()
+  let git = 'git -C ~/repo'
+  let commits = systemlist('ls -d ~/src/*')
+  let git = 'e'
+  return map(commits, '{"line": split(v:val, ''/'')[-1], "cmd": ":e " . v:val}')
+endfunction
+
 let g:startify_bookmarks = [
         \ { 'c': '~/.vim/vimrc' },
         \ '~/golfing',
@@ -287,13 +295,21 @@ let g:startify_custom_header = startify#pad([
 let g:startify_custom_footer =
        \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
 
-hi StartifyBracket ctermfg=240
-hi StartifyFile    ctermfg=147
-hi StartifyFooter  ctermfg=240
-hi StartifyHeader  ctermfg=114
-hi StartifyNumber  ctermfg=215
-hi StartifyPath    ctermfg=245
-hi StartifySlash   ctermfg=240
-hi StartifySpecial ctermfg=240
+hi StartifyBracket ctermfg=grey
+hi StartifyFile    ctermfg=blue
+hi StartifyFooter  ctermfg=grey
+hi StartifyHeader  ctermfg=green
+hi StartifyNumber  ctermfg=white
+hi StartifyPath    ctermfg=grey
+hi StartifySlash   ctermfg=grey
+hi StartifySpecial ctermfg=red
 
+let g:startify_lists = [
+      \ { 'type': 'files',     'header': ['   Recent']            },
+      \ { 'type': 'dir',       'header': ['   Recent '. getcwd()] },
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'commands',  'header': ['   Commands']       },
+      \ { 'type': function('s:projects'),  'header': ['   Projects']       },
+      \ ]
 
