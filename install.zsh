@@ -3,11 +3,12 @@
 DIR=${PWD}
 
 # vim
-if read -qs "?Install .vim/vimrc? (y/n)"$'\n'; then
+if read -qs "?Install .vim/vimrc and requirements? (y/n)"$'\n'; then
   if [ -f $HOME/.vim/vimrc ]; then
     mv $HOME/.vim/vimrc $HOME/.vim/vimrc.old
   fi
 
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
   mkdir $HOME/.vim
   ln -is $DIR/vim/vimrc $HOME/.vim/vimrc
