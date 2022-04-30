@@ -73,8 +73,9 @@ ZSH_THEME="gallois"
 plugins=(
          git
          vi-mode
-         colored-man-pages
          zsh-autosuggestions
+         zsh-syntax-highlight
+         colored-man-pages
         )
 
 source $ZSH/oh-my-zsh.sh
