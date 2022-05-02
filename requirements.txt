@@ -1,1 +1,3 @@
 exa
+zsh-autosuggestions
+zsh-syntax-highlighting
