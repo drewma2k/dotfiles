@@ -17,3 +17,6 @@ alias exa='exa --group-directories-first'
 alias ls='exa'
 alias la='exa -la'
 alias l='exa =l'
+
+#nvim
+alias nv=nvim
