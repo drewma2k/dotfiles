@@ -54,9 +54,3 @@ fi
 
 echo $'\n'
 
-# nvim
-if read -qs "?Install .config/nvim/init.vim? (y/n)"$'\n'; then
-  if [ -f $HOME/nvim/init.vim ]; then
-    ln -is $DIR/nvim/init.vim $HOME/.config/nvim/init.vim
-  fi
-fi
