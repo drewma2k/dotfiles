@@ -1,10 +1,12 @@
 # Custom aliases
 
 # editing config files
-alias aliases='vim ~/.oh-my-zsh/custom/aliases.zsh'
-alias zshrc='vim ~/.zshrc'
+alias aliases='nvim ~/.oh-my-zsh/custom/aliases.zsh'
+alias zshrc='nvim ~/.zshrc'
 alias vimrc='vim ~/.vim/vimrc'
+alias nvimrc='nvim ~/.config/nvim/init.lua'
 alias dotfiles='cd ~/src/dotfiles'
+alias src='cd ~/src'
 
 # formatted date that will sort properly
 alias datef='date +%Y-%m-%d'
