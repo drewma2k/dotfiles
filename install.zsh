@@ -23,12 +23,18 @@ if read -qs "?Install zsh configs? (y/n)"$'\n'; then
   fi
 
   ln -is $DIR/zsh/.zshrc $HOME/.zshrc
-  mkdir $HOME/.oh-my-zsh/custom
-  ln -is $DIR/zsh/oh-my-zsh/aliases.zsh $HOME/.oh-my-zsh/custom/aliases.zsh 
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
 echo $'\n'
+
+#oh-my-zsh
+if read -qs "?Install oh-my-zsh config? (y/n)"$'\n'; then
+  for file in $(ls $DIR/oh-my-zsh/custom) ; do
+    mkdir $HOME/.oh-my-zsh/custom
+    ln -is $DIR/oh-my-zsh/custom/$file $HOME/.oh-my-zsh/custom/$file 
+  done
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
+fi
 
 # tmux
 if read -qs "?Install .tmux.conf? (y/n)"$'\n'; then
@@ -48,9 +54,6 @@ fi
 
 echo $'\n'
 
-# nvim
-if read -qs "?Install .config/nvim/init.vim? (y/n)"$'\n'; then
-  if [ -f $HOME/nvim/init.vim ]; then
-    ln -is $DIR/nvim/init.vim $HOME/.config/nvim/init.vim
-  fi
-fi
+#nvim
+git clone https://github.com/drewma2k/nvim $HOME/.config/nvim
+
