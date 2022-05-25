@@ -29,11 +29,11 @@ echo $'\n'
 
 #oh-my-zsh
 if read -qs "?Install oh-my-zsh config? (y/n)"$'\n'; then
-  for file in $(ls $DIR/oh-my-zsh) ; do
+  for file in $(ls $DIR/oh-my-zsh/custom) ; do
     mkdir $HOME/.oh-my-zsh/custom
-    ln -is $DIR/zsh/oh-my-zsh/$file $HOME/.oh-my-zsh/custom/$file 
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
+    ln -is $DIR/oh-my-zsh/custom/$file $HOME/.oh-my-zsh/custom/$file 
   done
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
 fi
 
 # tmux
@@ -53,4 +53,7 @@ if read -qs "?Install scripts to ~/bin? (y/n)"$'\n'; then
 fi
 
 echo $'\n'
+
+#nvim
+git clone https://github.com/drewma2k/nvim $HOME/.config/nvim
 
