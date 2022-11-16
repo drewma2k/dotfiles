@@ -1,7 +1,7 @@
 # Custom aliases
 
 # AWS credentials
-alias creds='cloudsentry access get --all --ba ASVPTNRSHPDATAPREPROCESSING --force'
+alias creds='cloudsentry access get --all --ba ASVCLOUDPRE --force'
 
 # editing config files
 alias aliases='nvim ~/.oh-my-zsh/custom/aliases.zsh'
