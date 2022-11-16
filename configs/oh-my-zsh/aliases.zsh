@@ -21,4 +21,8 @@ alias la='exa -la'
 alias l='exa =l'
 
 #nvim
-alias nv=nvim
+alias nv='nvim'
+
+# general
+alias cl='clear'
+alias vpn='cofproxy dev'
