@@ -11,3 +11,5 @@ install-configs:
 install-scripts:
 	cp $(DIR)/bin/standup.sh ${HOME}/bin/standup
 	chmod +x ${HOME}/bin/standup
+	cp $(DIR)/bin/clipboard ${HOME}/bin/clipboard
+	chmod +x ${HOME}/bin/clipboard

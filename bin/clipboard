@@ -1,0 +1,2 @@
+#!/bin/bash
+echo /Users/drew/clipboard.txt | entr -sn 'cat /Users/drew/clipboard.txt | pbcopy' > /dev/null &
