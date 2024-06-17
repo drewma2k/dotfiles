@@ -15,10 +15,10 @@ alias src='cd ~/src'
 alias datef='date +%Y-%m-%d'
 
 # exa
-alias exa='exa --group-directories-first'
-alias ls='exa'
-alias la='exa -la'
-alias l='exa =l'
+alias eza='eza --group-directories-first'
+alias ls='eza'
+alias la='eza -la'
+alias l='eza =l'
 
 #nvim
 alias nv='nvim'
