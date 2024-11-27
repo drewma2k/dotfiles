@@ -143,3 +143,7 @@ export PATH="$PATH:/Users/yde639/.cargo/bin"
 # autoload -U compinit; compinit
 # source ~/.venv/bin/activate
 
+export PATH=/usr/local/bin/:$PATH
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+complete -C '/usr/local/bin/aws_completer' aws
