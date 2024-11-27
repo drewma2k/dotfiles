@@ -26,3 +26,4 @@ alias nv='nvim'
 # general
 alias cl='clear'
 alias vpn='cofproxy dev'
+alias db='/opt/homebrew/Cellar/databricks/0.226.0/bin/databricks'

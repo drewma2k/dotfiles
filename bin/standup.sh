@@ -1,5 +1,5 @@
 #!/bin/bash
-DIR="/$HOME/Documents/notes/standup"
+DIR="$HOME/Documents/notes/standup"
 mkdir -p $DIR
 cd $DIR
 DATE=$(date +%Y-%m-%d)
@@ -14,4 +14,4 @@ if [[ $DATE.md != $(readlink today) ]]; then
 fi
 
 #open vim
-nvim -o $(readlink today) $(readlink yesterday)
+nvim +"cd .." -o $(readlink today) $(readlink yesterday)
