@@ -27,3 +27,9 @@ alias nv='nvim'
 alias cl='clear'
 alias vpn='cofproxy dev'
 alias db='/opt/homebrew/Cellar/databricks/0.226.0/bin/databricks'
+alias icat='kitten icat'
+
+function kitty() {
+  command 'kitten icat $@'
+}
+ 

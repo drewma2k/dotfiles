@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 # If you come from bash you might have to change your $PATH.
 VIRTUAL_ENV_DISABLE_PROMPT=true
 DISABLE_MAGIC_FUNCTIONS=true
@@ -76,8 +77,9 @@ plugins=(
          git
          vi-mode
          # zsh-autosuggestions
-         colored-man-pages
-		 dotenv
+         # colored-man-pages
+		 # dotenv
+		 # fzf
         )
 
 source $ZSH/oh-my-zsh.sh
@@ -126,15 +128,15 @@ export PATH="/opt/homebrew/bin:$PATH"
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
 
-. /opt/homebrew/etc/profile.d/z.sh
+# . /opt/homebrew/etc/profile.d/z.sh
 # . ~/.7ps-complete.zsh
 
 
 # proxy
-export HTTPS_PROXY=http://seaproxy.kdc.capitalone.com:8099
-export https_proxy=http://seaproxy.kdc.capitalone.com:8099
-export HTTP_PROXY=http://seaproxy.kdc.capitalone.com:8099
-export http_proxy=http://seaproxy.kdc.capitalone.com:8099
+# export HTTPS_PROXY=http://seaproxy.kdc.capitalone.com:8099
+# export https_proxy=http://seaproxy.kdc.capitalone.com:8099
+# export HTTP_PROXY=http://seaproxy.kdc.capitalone.com:8099
+# export http_proxy=http://seaproxy.kdc.capitalone.com:8099
 export PATH="/opt/homebrew/opt/awscli@1/bin:$PATH"
 export PATH="/Users/yde639/Library/Python/3.12/bin:$PATH"
 fpath+=/opt/homebrew/share/zsh/site-functions
@@ -147,3 +149,5 @@ export PATH=/usr/local/bin/:$PATH
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 complete -C '/usr/local/bin/aws_completer' aws
+
+# zprof
